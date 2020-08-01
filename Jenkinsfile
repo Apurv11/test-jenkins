@@ -1,3 +1,8 @@
+libraries {
+     lib('shared-library')
+ }
+
+
 pipeline {
     agent {
         node {
@@ -16,6 +21,11 @@ pipeline {
         stage('Test') {
             steps {
                 sh './scripts/test.sh'
+            }
+        }
+        stage ('test shared library') {
+            steps {
+                sample "Apurba"
             }
         }
         stage('Deliver') {
